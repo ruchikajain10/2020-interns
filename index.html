@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Exchange Rate
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet" type="text/css">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+
+<body onload="fetchApiData()">
+    <section id="contents" class="margin">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <i class="fa fa-align-right"></i>
+                    </button>
+                    <a class="navbar-brand" href="#">Exchange <span class="main-color"> Rate</span></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="welcome">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="content">
+                                    <h2>A Demographic view for exchange rate of INR against EUR </h2>
+                                
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-6" style="margin-top: 60px;">
+                                    <select onchange="getCurrency()" id="contry-currency" name="currency"></select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" id="DateRangeInput" name="daterange" value="01/01/2018 - 01/15/2018" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="statistics">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            <i class="fa fa-envelope fa-fw bg-primary"></i>
+                            <div class="info">
+                                <h3>Pie Chart</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <i class="fa fa-file fa-fw danger"></i>
+                            <div class="info">
+                                <h3>Race Chart</h3>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <i class="fa fa-users fa-fw success"></i>
+                            <div class="info">
+                                <h3>Bar Chart</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <i class="fa fa-users fa-fw success"></i>
+                            <div class="info">
+                                <h3>Line Chart</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="charts">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h3>Pie Chart</h3>
+                            <canvas id="myPieChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h3>Race Chart</h3>
+                            <canvas id="myRaceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="charts">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-push-4" id="Og-Barchat">
+                        <div class="chart-container mt-5">
+                            <h3>Chart</h3>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mt-5" style="margin-top: 25px;">
+                        <div class="chart-container">
+                            <h3>Chart2</h3>
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
