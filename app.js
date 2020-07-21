@@ -15,11 +15,10 @@ const RandomHexCode = () => {
 
 
 const fetchApiData = (startdate, enddate,exchangeCurrency) => {
-    debugger
     exch_Currency = (exchangeCurrency)? exchangeCurrency : 'INR';
 /*fiter dates    */
     let filteredDates = [];
-    let urls = ['http://localhost:3000/rates']
+    let urls = ['https://api.exchangeratesapi.io/latest' , 'https://api.exchangeratesapi.io/2010-01-12',' https://api.exchangeratesapi.io/latest?base=USD',' https://api.exchangeratesapi.io/latest?symbols=USD']
     Promise.all(urls.map(u => fetch(u))).then(responses =>
         Promise.all(responses.map(res => res.json()))
     ).then(data => {
